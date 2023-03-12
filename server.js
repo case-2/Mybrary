@@ -11,7 +11,6 @@ app.set('views', __dirname + '/views')
 app.set('layout', 'layouts/layout')
 app.use(expressLayouts)
 app.use(express.static('public'))
-app.use('/', indexRouter)
 
 mongoose.set('strictQuery', false);
 const connectDB = async () => {
@@ -24,6 +23,7 @@ const connectDB = async () => {
   }
 }
 
+app.use('/', indexRouter)
 
 
 
