@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const expressLayouts = require('express-ejs-layouts');
 const PORT = process.env.PORT || 3000;
 const indexRouter = require('./routes/index');
+const authorRouter = require('./routes/author');
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
@@ -24,6 +25,8 @@ const connectDB = async () => {
 }
 
 app.use('/', indexRouter)
+app.use('/authors', authorRouter)
+
 
 
 
