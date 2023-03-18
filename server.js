@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 const indexRouter = require('./routes/index');
 const authorRouter = require('./routes/authors');
+const bookRouter = require('./routes/books');
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
@@ -29,6 +30,7 @@ const connectDB = async () => {
 
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
+app.use('/books', bookRouter)
 
 
 
